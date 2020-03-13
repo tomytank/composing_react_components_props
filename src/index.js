@@ -6,8 +6,14 @@ import Button from "./Button";
 import "./styles.css";
 
 function App() {
-  const [buttonColor, setButtonColor] = useState("#d47f6A");
+  const [buttonColor, setButtonColor] = useState("#a7dd5f");
+  //const changeColor = () => {
+  //setButtonColor("dodgerblue");
+  //};
 
+  const changeColor = colorsArray => {
+    setButtonColor(colorsArray[Math.floor(Math.random() * colorsArray.length)]);
+  };
   return (
     <div className="App">
       <h1>Hello CodeSandbox</h1>
@@ -19,6 +25,7 @@ function App() {
         name="Dan"
         favouriteNumber={{ favNum: 42 }}
         text_content="Click Me!"
+        clickHandler={changeColor}
       />
     </div>
   );
